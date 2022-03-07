@@ -308,10 +308,6 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
       if (formattedAddress && VELAS_TOKEN_LIST[formattedAddress]) {
         return getCustomLogo({ address, src: VELAS_TOKEN_LIST[formattedAddress].logoURI, size, setError, ...rest })
       }
-      path = `https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/arbitrum/assets/${isAddress(
-        //todo namgold: fill this
-        address
-      )}/logo.png`
       break
 
     case `${ChainId.BTTC}`:
