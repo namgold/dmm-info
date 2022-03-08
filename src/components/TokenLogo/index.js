@@ -308,12 +308,14 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
       if (formattedAddress && VELAS_TOKEN_LIST[formattedAddress]) {
         return getCustomLogo({ address, src: VELAS_TOKEN_LIST[formattedAddress].logoURI, size, setError, ...rest })
       }
+      path = 'error'
       break
 
     case `${ChainId.BTTC}`:
       if (formattedAddress && BTTC_TOKEN_LIST[formattedAddress]) {
         return getCustomLogo({ address, src: BTTC_TOKEN_LIST[formattedAddress].logoURI, size, setError, ...rest })
       }
+      path = 'error'
       break
 
     default:
