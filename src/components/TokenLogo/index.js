@@ -327,8 +327,14 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
       break
 
     case `${ChainId.AURORA}`:
-      if (formattedAddress && AURORA_TOKEN_LIST[formattedAddress]) {
-        return getCustomLogo({ address, src: AURORA_TOKEN_LIST[formattedAddress].logoURI, size, setError, ...rest })
+      if (formattedAddress && AURORA_TOKEN_LIST[formattedAddress.toLowerCase()]) {
+        return getCustomLogo({
+          address,
+          src: AURORA_TOKEN_LIST[formattedAddress.toLowerCase()].logoURI,
+          size,
+          setError,
+          ...rest,
+        })
       }
       path = 'error'
       break

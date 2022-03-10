@@ -278,12 +278,21 @@ export const AURORA_TOKEN_ARRAY = [
     logoURI: 'https://raw.githubusercontent.com/aurora-is-near/bridge-assets/master/tokens/yfi.svg',
     tags: ['ethereum'],
   },
+  {
+    chainId: 1313161554,
+    address: '0xc9bdeed33cd01541e1eed10f90519d2c06fe3feb',
+    symbol: 'WETH',
+    name: 'Wrapped Ether',
+    decimals: 18,
+    logoURI: 'https://raw.githubusercontent.com/ava-labs/avalanche-bridge-resources/main/tokens/WETH/logo.png',
+    tags: ['ethereum'],
+  },
 ]
 
 const AURORA_TOKEN_LIST = AURORA_TOKEN_ARRAY.reduce((acc, cur) => {
   return {
     ...acc,
-    [cur.address]: cur,
+    [cur.address.toLowerCase()]: cur,
   }
 }, {})
 
